@@ -1,33 +1,14 @@
-<?php
-/*$login = $_POST['login'];
-$clave = $_POST['clave'];
-consultar
 
-if($clave=="administrador")
-	{session_start();
-	$_SESSION['log']=1;
-	header("location:administrador.php");
-    }
-else{	
-if($clave=="monitor")
-	{session_start();
-	$_SESSION['log']=1;
-	header("location:monitor.php");
-    } 
-else{	
-if($clave=="cliente")
-	{session_start();
-	$_SESSION['log']=1;
-	header("location:cliente.php");
-    } 
- else{
-		header("location:index2.php");
-		}
-	}
-	}*/
-	
-	$v_id = $_POST['id'];
-    $v_rol = $_POST['rol'];
+<?php
+/*Valido datos del usuario, si exite en la Base de Datos guardo esos datos 
+en la Sesion (para verificar en siguientes paginas que el usuario este autenticado) 
+Si es usuario valido o registrado ok --> ingresoBusqueda
+Si es administrador					 --> mostrarDetalles
+*/
+ 
+ 
+$v_id = $_POST['id'];
+$v_rol = $_POST['rol'];
 
 	function conectarse() {
 		if(!($id = mysql_connect("localhost", "root", ""))) {
@@ -41,10 +22,10 @@ if($clave=="cliente")
 		return $id;
 	}
 	
-	//session_start();
+	session_start();
 	
-	if ($v_id == "" || $v_rol == "") { 
-		header("location:index2.php"); 
+	if ($v_user == "" || $v_pass == "") { 
+		header("Location: ../index2.php"); 
 	} 
 	else { 
 		//Conexión a la Base de Datos
@@ -56,7 +37,7 @@ if($clave=="cliente")
 		$registro   = mysql_fetch_array($datos);
 		if ($cant == 0) { 
 			echo "Error: Usuario o Contraseña incorrectos"; 
-			header("location:index2.php"); 
+			header("Location: ../index2.php"); 
 		                }
 		else {
 			//Si ingresa correctamente guardo datos de la Sesión del usuario
@@ -65,23 +46,18 @@ if($clave=="cliente")
 			$_SESSION['s_aute'] = 'Y'; 
 		
 			if ($registro['id'] == '1'){
-				session_start();
-				$_SESSION['log']=1;
-				header("location:administrador.php");
+				header("Location: administrador.php");
 			} 
 			else
 			{
 			if ($registro['id'] == '2'){
-				session_start();
-				$_SESSION['log']=1;
-				header("location:cliente.php");}
+				header("Location: cliente.php");
 			
 			else  {
-				  session_start();
-				$_SESSION['log']=1;
-				header("location:monitor.php"); 
+				  header("Location: monitor.php"); 
 			}
 		}
 	} 
 }
-?>
+?> 
+

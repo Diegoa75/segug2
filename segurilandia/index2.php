@@ -19,10 +19,10 @@ include("".$documentroot."/segurilandia/include/header.php");
 	<div class="formuingreso">
 		<form action= "organizador.php" method="post">
 			Usuario &nbsp;&nbsp&nbsp;&nbsp;
-			<input type="text" id="campo" name="login" value="" size="20"/>
+			<input type="text" id="campo" name="id" value="" size="20"/>
 			<br><br>
 			Contraseña
-			<input type="password" name="clave" value="" size="20"/>
+			<input type="password" name="rol" value="" size="20"/>
 			<br><br>&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;			
 			<input type="submit" value="Ingresar" class="boton"/>
 			<input type="reset" name="limpiar" value="Reset" class="boton"/>
