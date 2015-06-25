@@ -1,0 +1,143 @@
+/** {
+  font-family:verdana;
+ }*/
+ 
+ .cabecera{
+	position:relative;
+	color:white;
+	background-color: #010F43;
+	height:200px;
+	margin-left:30px;
+	margin-right:30px;				
+	}
+			
+.logo{
+	position:absolute;	
+	left:430px;
+	width:340px;
+	height:193px;
+	margin-top:4px;
+		
+		}
+
+.contenedor{
+			margin-left:30px;
+			margin-top:30px;
+			background-color:white;
+			height:450px;
+			}
+.contenedor2{
+			margin-left:30px;
+			margin-top:30px;
+			background-color:white;
+			height:400px;
+			padding-left:200px;
+			}
+			
+.formuingreso{
+				margin-right:30px;
+				margin-top:.5px;
+				padding:50px;
+				width:270px;
+				height:285px;
+				float:right;
+				border-style:solid;
+				border-width:3px;
+				border-color:#001B7F;
+				background-color:white;
+			 }	
+.boton{
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#001B7F;
+        border:0px;
+        width:70px;
+        height:25px;
+		}
+.fondoformulario{
+	width:340px;
+	height:190px;
+	position:relative;
+	right:12%;
+	top:10%;
+	}
+.pie_de_pagina{
+				text-align:right;	
+				height:75px;
+				clear:both;
+				background-color:#02ACD7;
+				margin-left:30px;
+				margin-right:30px;
+				color:white;
+				font-weight:bold;
+				 background-image: url("imagenes/3.jpg");
+			}
+			
+* { margin: 0px;
+padding: 0px; outline: 0;
+font-family:verdana;
+}
+
+.contenedor_menu{
+	height:66px;
+	background-color:#063440;
+	margin-left:30px;
+	margin-right:30px;
+	background-image: url("imagenes/2.png");
+}
+
+/*.mapa{
+	width:500px;
+	height:250px;
+	}*/	
+ 
+#menu {  text-align: center;
+font-size: 1em;
+width: 492px;
+
+margin: 0px auto;
+}
+#menu ul { list-style-type: none;}
+
+#menu ul li.nivel1 { 
+float: left;
+width: 162px;
+
+/*margin-right:2px;*/
+}
+#menu ul li a {display: block;
+text-decoration: none;
+color: #fff;
+background-color: #010F43;
+/*border: solid 1px #fff;*/
+padding: 8px;
+position: relative;
+height:50px;
+}
+#menu ul li:hover {position: relative;
+}
+#menu ul li a:hover, #menu ul li:hover a.nivel1 {background-color: #6CC;
+color: #fff;
+position: relative;
+}
+#menu ul li a.nivel1 {display: block!important;display: none;
+position: relative;
+}
+#menu ul li ul {display: none;
+}
+#menu ul li a:hover ul, #menu ul li:hover ul {display: block;
+position: absolute;left: 0px;
+}
+#menu ul li ul li a {width: 160px;
+padding: 6px 2px 8px 0px;
+border-top-color: #000;
+}
+#menu ul li ul li a:hover {border-top-color: #000;
+position: relative;
+}
+/*table.falsa {border-collapse:collapse;
+border:0px;
+float: left;
+position: relative;
+}*/
