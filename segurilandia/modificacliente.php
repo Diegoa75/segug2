@@ -23,10 +23,10 @@ echo session_id();
 	<li class="nivel1"><a href="#" class="nivel1"><br>Inicio</a>
 	
   </li>
-  <li class="nivel1"><a href="#" class="nivel1"><br>Cliente</a>
+  <li class="nivel1"><a href="administrador.php" class="nivel1"><br>Cliente</a>
 	<ul>
 		<li><a href="altacliente.php">Alta</a></li>
-		<li><a href="modificacliente.php">Modificacion</a></li>
+		<li><a href="#">Modificacion</a></li>
 		<li><a href="bajacliente.php">Baja</a></li>
 	</ul>
   </li>
@@ -47,7 +47,7 @@ echo session_id();
 </div>
 <div class="contenedor2">
 	<br><br>	
-	 Bienvenido administrador <br><br>
+	 Modificar <br><br>
 	 Nro Nombre<br> <br>
 <?php	
 $host='localhost';
@@ -81,17 +81,24 @@ echo " ".$fila ['nombre'];
 echo "<br>";
 }  
 ?>
-
-<!--<div class="formubaja">
-<form action= "eliminacli.php" method="post">
-			Cliente a eliminar &nbsp;&nbsp&nbsp;&nbsp;
+<div class="formucambia">
+<form action= "cambiacli.php" method="post">
+			Cliente a modificar &nbsp;&nbsp&nbsp;&nbsp;
 			<input type="text" id="campo" name="id" value="" size="20"/>
 			<br><br>
+			
+			Nombre cliente &nbsp;&nbsp&nbsp;&nbsp;
+			<input type="text" id="campo" name="actual" value="" size="20"/>
+			<br><br>
+			
+			Nombre nuevo &nbsp;&nbsp&nbsp;&nbsp;
+			<input type="text" id="campo" name="nuevo" value="" size="20"/>
+			<br><br>
 						
-			<input type="submit" value="Borrar" class="boton"/>
+			<input type="submit" value="Cambiar" class="boton"/>
 			<input type="reset" name="limpiar" value="Reset" class="boton"/>
 		</form>
-</div>-->	
+</div>	
 
 	<form action= "logoutb.php" method="post"><br>
 	<input type="submit" value="Salir" class="boton"/>

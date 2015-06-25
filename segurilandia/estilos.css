@@ -46,6 +46,30 @@
 				border-color:#001B7F;
 				background-color:white;
 			 }	
+.formubaja{
+				margin-right:40%;
+				margin-top:-15%;
+				padding:50px;
+				width:150px;
+				height:100px;
+				float:right;
+				border-style:solid;
+				border-width:3px;
+				border-color:#001B7F;
+				background-color:white;
+			}
+.formucambia{
+				margin-right:40%;
+				margin-top:-15%;
+				padding:50px;
+				width:150px;
+				height:240px;
+				float:right;
+				border-style:solid;
+				border-width:3px;
+				border-color:#001B7F;
+				background-color:white;
+			}				
 .boton{
         font-family:Verdana,Helvetica;
         font-weight:bold;
@@ -94,7 +118,7 @@ font-family:verdana;
  
 #menu {  text-align: center;
 font-size: 1em;
-width: 492px;
+width: 648px;
 
 margin: 0px auto;
 }
