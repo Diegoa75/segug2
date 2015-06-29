@@ -7,6 +7,8 @@ echo session_id();
 <?php
 $id = $_POST['id'];
 $nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$contrasenia = $_POST['contrasenia'];
 
 	function conectarse() {
 		if(!($conexion = mysql_connect("localhost", "root", ""))) {
@@ -28,20 +30,29 @@ $nombre = $_POST['nombre'];
 		$conexion = conectarse();
 		mysql_select_db('prueba2', $conexion); 
 		
-		$query 	= "SELECT * FROM cliente WHERE id = '$id' AND nombre = '$nombre'"; 
-		$consulta 		= mysql_query($query, $conexion); 
+		$query 	= "SELECT * FROM cliente WHERE id = '$id' AND nombre = '$nombre' AND apellido = '$apellido'"; 
+		$query2 = "SELECT * FROM usuario WHERE id = '$id'";
+		$consulta 		= mysql_query($query, $conexion);
+		$consulta2 = mysql_query($query2, $conexion);	
 		$cant	 	= mysql_num_rows($consulta); 
+		$cant2	 	= mysql_num_rows($consulta2);
 		$fila   = mysql_fetch_array($consulta);
-		if ($cant != 0) { //YA EXISTE
+		$fila2   = mysql_fetch_array($consulta2);
+		if ($cant != 0 || $cant2 !=0) { //YA EXISTE
 			echo "Error: Cliente repetido"; 
 			header("location:altacliente.php"); 
 		                }
 		else {
 			//Cambiar
 			//"INSERT INTO USUARIO VALUES ('$realname','$pass','$rol','')"
-			$queryalta = "INSERT INTO CLIENTE VALUES ('$id', '$nombre')";
+			$queryalta2 = "INSERT INTO usuario VALUES ('$id', '$nombre', '$contrasenia')";
+			$consultaalta2 = mysql_query($queryalta2, $conexion);
+			
+			
+			$queryalta = "INSERT INTO cliente VALUES ('$id','$nombre','$apellido')";
 			$consultaalta = mysql_query($queryalta, $conexion);
-			if(!$consultaalta){
+			
+			if(!$consultaalta2 || !$consultaalta){
 				echo 'Ingreso fallido';
 							}
 			else{

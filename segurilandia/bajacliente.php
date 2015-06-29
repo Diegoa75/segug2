@@ -6,7 +6,7 @@ include("".$documentroot."/segurilandia/include/header.php");
 session_start();
 if($_SESSION['log']!=1)
 header("location:index2.php");
-echo session_id();
+
 ?>
 <html>
 <div class="cabecera"> 
@@ -14,7 +14,15 @@ echo session_id();
 		<img src="./imagenes/logo2.jpg"
 		width="340" height="190"/>
 	</div> 
-</div>
+	<div class="redes">
+		<img src="./imagenes/logo_face.png"
+		width="30" height="32"/>
+		<img src="./imagenes/logo_twitter.png"
+		width="30" height="32"/>
+		
+	</div> 
+</div>	
+
 
 <body>
 <div class="contenedor_menu">
@@ -25,7 +33,7 @@ echo session_id();
   </li>
   <li class="nivel1"><a href="administrador.php" class="nivel1"><br>Cliente</a>
 	<ul>
-		<li><a href="altacliente">Alta</a></li>
+		<li><a href="altacliente.php">Alta</a></li>
 		<li><a href="modificacliente.php">Modificacion</a></li>
 		<li><a href="#">Baja</a></li>
 	</ul>
@@ -78,6 +86,7 @@ while($fila=mysql_fetch_array($consulta))
 {
 echo $fila ['id'];
 echo " ".$fila ['nombre'];
+echo " ".$fila ['apellido'];
 echo "<br>";
 }  
 ?>
@@ -96,6 +105,6 @@ echo "<br>";
 	<input type="submit" value="Salir" class="boton"/>
 	</form>
 </div>
-<div class="pie_de_pagina"><br><br><br> SEGURILANDIA S.A.</div>
+<div class="pie_de_pagina"><br><br><br><div class="nombre"> SEGURILANDIA S.A. </div>Florencio Varela 1970&nbsp; San Justo&nbsp;&nbsp;&nbsp;&nbsp;Tel. 4123-4567&nbsp;&nbsp;&nbsp;&nbsp; www.segurilandia.com&nbsp;&nbsp;</div>
 </body>
 	</html>

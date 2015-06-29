@@ -9,6 +9,14 @@ include("".$documentroot."/segurilandia/include/header.php");
 		<img src="./imagenes/logo2.jpg"
 		width="340" height="190"/>
 	</div> 
+	<div class="redes">
+		<img src="./imagenes/logo_face.png"
+		width="30" height="32"/>
+		<img src="./imagenes/logo_twitter.png"
+		width="30" height="32"/>
+		
+	</div> 
+	
 </div>
 
 
@@ -34,7 +42,7 @@ include("".$documentroot."/segurilandia/include/header.php");
 			
 	
 </div>
-<div class="pie_de_pagina"><br><br><br> SEGURILANDIA S.A.</div>
+<div class="pie_de_pagina"><br><br><br><div class="nombre"> SEGURILANDIA S.A. </div>Florencio Varela 1970&nbsp; San Justo&nbsp;&nbsp;&nbsp;&nbsp;Tel. 4123-4567&nbsp;&nbsp;&nbsp;&nbsp; www.segurilandia.com&nbsp;&nbsp;</div>
 </body>
 
 </html>

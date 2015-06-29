@@ -7,15 +7,26 @@
 $(document).ready(function(){
   map = new GMaps({
     div: '#map',
-    lat: -12.043333,
-    lng: -77.028333
-  });
+    lat: -34.670671534,
+    lng: -58.562600613
+	});
+  map.addMarker({
+  lat: -34.670671534,
+  lng: -58.562600613,
+  title: 'UNLAM',
+  click: function(e) {
+    alert('You clicked in this marker');
+  }
 });
- </script>
+});
+
+
+
+</script>
 </head>
 <body>
 
-<div id="map" style="width:500px;height:250px;"></div>
+<div id="map" style="width:500px;height:500px;margin-left:300px;margin-top:150px;"></div>
 
 
 </body>

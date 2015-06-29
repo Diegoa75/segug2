@@ -6,7 +6,7 @@ include("".$documentroot."/segurilandia/include/header.php");
 session_start();
 if($_SESSION['log']!=1)
 header("location:index2.php");
-echo session_id();
+//echo session_id();
 ?>
 <html>
 <div class="cabecera"> 
@@ -14,7 +14,15 @@ echo session_id();
 		<img src="./imagenes/logo2.jpg"
 		width="340" height="190"/>
 	</div> 
-</div>
+	<div class="redes">
+		<img src="./imagenes/logo_face.png"
+		width="30" height="32"/>
+		<img src="./imagenes/logo_twitter.png"
+		width="30" height="32"/>
+		
+	</div> 
+</div>	
+
 
 <body>
 <div class="contenedor_menu">
@@ -78,21 +86,26 @@ while($fila=mysql_fetch_array($consulta))
 {
 echo $fila ['id'];
 echo " ".$fila ['nombre'];
+echo " ".$fila ['apellido'];
 echo "<br>";
 }  
 ?>
 <div class="formucambia">
 <form action= "cambiacli.php" method="post">
-			Cliente a modificar &nbsp;&nbsp&nbsp;&nbsp;
+			Nro &nbsp;&nbsp&nbsp;&nbsp;
 			<input type="text" id="campo" name="id" value="" size="20"/>
 			<br><br>
 			
-			Nombre cliente &nbsp;&nbsp&nbsp;&nbsp;
-			<input type="text" id="campo" name="actual" value="" size="20"/>
+			Nombre &nbsp;&nbsp&nbsp;&nbsp;
+			<input type="text" id="campo" name="nombre" value="" size="20"/>
 			<br><br>
 			
-			Nombre nuevo &nbsp;&nbsp&nbsp;&nbsp;
-			<input type="text" id="campo" name="nuevo" value="" size="20"/>
+			Apellido &nbsp;&nbsp&nbsp;&nbsp;
+			<input type="text" id="campo" name="apellido" value="" size="20"/>
+			<br><br>
+			
+			Contrasenia &nbsp;&nbsp&nbsp;&nbsp;
+			<input type="text" id="campo" name="contrasenia" value="" size="20"/>
 			<br><br>
 						
 			<input type="submit" value="Cambiar" class="boton"/>
@@ -104,6 +117,6 @@ echo "<br>";
 	<input type="submit" value="Salir" class="boton"/>
 	</form>
 </div>
-<div class="pie_de_pagina"><br><br><br> SEGURILANDIA S.A.</div>
+<div class="pie_de_pagina"><br><br><br><div class="nombre"> SEGURILANDIA S.A. </div>Florencio Varela 1970&nbsp; San Justo&nbsp;&nbsp;&nbsp;&nbsp;Tel. 4123-4567&nbsp;&nbsp;&nbsp;&nbsp; www.segurilandia.com&nbsp;&nbsp;</div>
 </body>
 	</html>

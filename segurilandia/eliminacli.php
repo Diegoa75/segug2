@@ -39,8 +39,11 @@ $id = $_POST['id'];
 		else {
 			//BORRAR
 			$queryborra = "DELETE FROM cliente WHERE id = '$id'";
+			$queryborra2 = "DELETE FROM usuario WHERE id = '$id'";
+			
 			$consultaborra = mysql_query($queryborra, $conexion);
-			if(!$consultaborra){
+			$consultaborra2 = mysql_query($queryborra2, $conexion);
+			if(!$consultaborra || !$consultaborra2){
 				echo 'No se pudo borrar al cliente';
 							}
 			else{

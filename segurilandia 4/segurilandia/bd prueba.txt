@@ -1,8 +1,0 @@
-Tabla:usuario(id INT, rol VARCHAR)
-	(1,"admin)
-	(2,"cliente")	
-	(3,"monitor")
-
-
-peguenla aca o si no importen el archivo con el phpadmin
-C:\xampp\mysql\data

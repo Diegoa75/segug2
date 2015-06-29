@@ -6,7 +6,6 @@ include("".$documentroot."/segurilandia/include/header.php");
 session_start();
 if($_SESSION['log']!=1)
 header("location:index2.php");
-echo session_id();
 ?>
 <html>
 <div class="cabecera"> 
@@ -14,7 +13,14 @@ echo session_id();
 		<img src="./imagenes/logo2.jpg"
 		width="340" height="190"/>
 	</div> 
-</div>
+	<div class="redes">
+		<img src="./imagenes/logo_face.png"
+		width="30" height="32"/>
+		<img src="./imagenes/logo_twitter.png"
+		width="30" height="32"/>
+		
+	</div> 
+</div> 
 
 <body>
 <div class="contenedor_menu">
@@ -32,7 +38,7 @@ echo session_id();
   </li>
   <li class="nivel1"><a href="#" class="nivel1"><br>Historial</a>
 	<ul>
-		<li><a href="#">Alarma</a></li>
+		<li><a href="php/alarma.html">Alarma</a></li>
 		<li><a href="#">Eventos</a></li>		
 	</ul>
 </li>
@@ -62,41 +68,27 @@ $inseltar=mysql_query($sql,$conexion);
     }else{
         echo 'Base de datos creada exitosamente<br />.';
       }*/
-      
       $seleccion_base =mysql_select_db('prueba2',$conexion);
 		/*if($seleccion_base==FALSE)
 		{
-		
 		echo 'Error al seleccionar la base<br />.';
 		} else{
 				echo 'Base seleccionada exitosamente<br />.';
-       
        }*/
-	$consulta= mysql_query("select * from cliente",$conexion)   or die ("Fallo en la consulta");
+$consulta= mysql_query("select * from cliente",$conexion)   or die ("Fallo en la consulta");
 
 while($fila=mysql_fetch_array($consulta))
 {
 echo $fila ['id'];
 echo " ".$fila ['nombre'];
+echo " ".$fila ['apellido'];
 echo "<br>";
 }  
 ?>
-
-<!--<div class="formubaja">
-<form action= "eliminacli.php" method="post">
-			Cliente a eliminar &nbsp;&nbsp&nbsp;&nbsp;
-			<input type="text" id="campo" name="id" value="" size="20"/>
-			<br><br>
-						
-			<input type="submit" value="Borrar" class="boton"/>
-			<input type="reset" name="limpiar" value="Reset" class="boton"/>
-		</form>
-</div>-->	
-
-	<form action= "logoutb.php" method="post"><br>
-	<input type="submit" value="Salir" class="boton"/>
-	</form>
+<form action= "logoutb.php" method="post"><br>
+<input type="submit" value="Salir" class="boton"/>
+</form>
 </div>
-<div class="pie_de_pagina"><br><br><br> SEGURILANDIA S.A.</div>
+<div class="pie_de_pagina"><br><br><br><div class="nombre"> SEGURILANDIA S.A. </div>Florencio Varela 1970&nbsp; San Justo&nbsp;&nbsp;&nbsp;&nbsp;Tel. 4123-4567&nbsp;&nbsp;&nbsp;&nbsp; www.segurilandia.com&nbsp;&nbsp;</div>
 </body>
 	</html>

@@ -49,7 +49,7 @@ if($clave=="cliente")
 	else { 
 		//Conexión a la Base de Datos
 		$conexion = conectarse();
-		mysql_select_db("prueba", $conexion); 
+		mysql_select_db("prueba2", $conexion); 
 		$query 	= "SELECT * FROM usuario WHERE id = '$id' AND rol = '$rol'"; 
 		$consulta 		= mysql_query($query, $conexion); 
 		$cant	 	= mysql_num_rows($consulta); 
@@ -66,15 +66,15 @@ if($clave=="cliente")
 			
 			
 		
-			if ($fila['id'] == '1'){
+			if ($fila['rol'] == 'admin'){
 				session_start();
 				
 				$_SESSION['log']=1;
-				header("location:administrador.php");
+				header("location: administrador.php");
 			} 
 			else
 			{
-			if ($fila['id'] == '2'){
+			if ($fila['rol'] == 'cliente'){
 				session_start();
 				
 				$_SESSION['log']=1;

@@ -1,13 +1,13 @@
 <?php
 // Direcciona el encabezado desde la raiz
 $documentroot = $_SERVER["DOCUMENT_ROOT"];
-include("".$documentroot."/segurilandia/include/header2.php");
+include("".$documentroot."/segurilandia/include/header.php");
 ?>
 <?php
 session_start();
 if($_SESSION['log']!=1)
 header("location:index2.php");
-echo session_id();
+
 ?>
 <html>
 <div class="cabecera"> 
@@ -15,6 +15,14 @@ echo session_id();
 		<img src="./imagenes/logo2.jpg"
 		width="340" height="190"/>
 	</div> 
+	<div class="redes">
+		<img src="./imagenes/logo_face.png"
+		width="30" height="32"/>
+		<img src="./imagenes/logo_twitter.png"
+		width="30" height="32"/>
+		
+	</div> 
+	
 </div>
 
 <body>
@@ -48,12 +56,12 @@ echo session_id();
 	<br><br>	
 	<h1> Bienvenido cliente</h1>
 	
-	<div class="mapa" style="width:500px;height:250px;"></div>
+	
 	
 	<form action= "logoutb.php" method="post"><br>
 	<input type="submit" value="Salir" class="boton"/>
 	</form>
 </div>
-<div class="pie_de_pagina"><br><br><br> SEGURILANDIA S.A.</div>
+<div class="pie_de_pagina"><br><br><br><div class="nombre"> SEGURILANDIA S.A. </div>Florencio Varela 1970&nbsp; San Justo&nbsp;&nbsp;&nbsp;&nbsp;Tel. 4123-4567&nbsp;&nbsp;&nbsp;&nbsp; www.segurilandia.com&nbsp;&nbsp;</div>
 </body>
 	</html>
